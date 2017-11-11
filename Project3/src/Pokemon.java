@@ -105,3 +105,6 @@ public class Pokemon
         setDefense(getDefense() * 5);
     }
 }
+
+
+//I finished its a miracle

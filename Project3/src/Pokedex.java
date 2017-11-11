@@ -128,16 +128,19 @@ public class Pokedex
     //copied some code from project 2
     public void sortPokedex()
     {
+
         for(int blue = 0; blue < Arceus.length; blue++)
         {
-            for(int red = 0; red < Arceus.length; red++)
+            for(int red = blue + 1; red < Arceus.length; red++)
             {
                 try
                 {
-                    if(Arceus[blue].getSpecies().compareToIgnoreCase(Arceus[red].getSpecies ()) < 0)
+                    if(Arceus[blue].getSpecies().compareToIgnoreCase(Arceus[red].getSpecies()) > 0)
                     {
-                        Arceus[blue].setSpecies(Arceus[red].getSpecies());
-                        Arceus[red].getSpecies();
+                        Pokemon temp = new Pokemon("temp");
+                        temp = Arceus[blue];
+                        Arceus[blue] = Arceus[red];
+                        Arceus[red] = temp;
                     }
                 }
                 catch(NullPointerException e)
